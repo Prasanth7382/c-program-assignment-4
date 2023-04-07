@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+#define MAX_PLAYERS 11
+
+struct player {
+    char name[30];
+    int runs;
+};
+
+int main() {
+    int i, total_runs = 0;
+    struct player team[MAX_PLAYERS];
+
+    printf("Enter batting information of the cricket team:\n");
+    for (i = 0; i < MAX_PLAYERS; i++) {
+        printf("Enter name of player %d: ", i+1);
+        scanf("%s", team[i].name);
+        printf("Enter runs scored by %s: ", team[i].name);
+        scanf("%d", &team[i].runs);
+        total_runs += team[i].runs;
+    }
+
+    printf("\nTotal runs scored by the cricket team: %d\n", total_runs);
+
+    return 0;
+}
